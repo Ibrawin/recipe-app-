@@ -5,7 +5,7 @@ import ibrawin.springframwork.spring5receipeapp.repositories.RecipeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +22,7 @@ class RecipeServiceImplTest {
 
     @BeforeEach
     void setUp() {
-        recipeRepository = Mockito.mock(RecipeRepository.class);
+        MockitoAnnotations.openMocks(this);
         recipeService = new RecipeServiceImpl(recipeRepository);
     }
 
